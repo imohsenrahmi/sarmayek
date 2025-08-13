@@ -32,7 +32,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "pages/login/index.jsx", "pages/index.jsx", "pages/verify/index.jsx"  ],
   "exclude": [
     "node_modules"
   ]
