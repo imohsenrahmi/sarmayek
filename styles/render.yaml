@@ -1,0 +1,4 @@
+services:
+  - type: web
+    name: your-nextjs-app
+    staticPublishPath: "./out"  # Next.js exports to `/out` by default
