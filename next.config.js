@@ -17,13 +17,3 @@ module.exports = {
     defaultLocale: 'en-US',
   },
 };
-
-
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: 'export', // Enables static export
-  // (Optional) Set the base path if deploying to a subdirectory
-  // basePath: '/your-repo-name',
-};
-
-module.exports = nextConfig;
