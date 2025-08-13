@@ -1,16 +1,24 @@
 import Layout from "@/components/Layout";
-import logo from "../../public/LogoSarmayek.png";
+import logo from "../../public/logo/LogoSarmayek.png";
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
 const Login = () => {
     const [mobile, setMobile] = useState("");
+    const [error, setError] = useState("");
     const router = useRouter();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // در اینجا می‌توان API برای ارسال کد OTP صدا زد
+
+        const phoneRegex = /^09\d{9}$/;
+        if (!phoneRegex.test(mobile)) {
+            setError("شماره باید ۱۱ رقم باشد و با 09 شروع شود.");
+            return;
+        }
+
+        setError("");
         router.push({
             pathname: "/verify",
             query: { mobile }
@@ -43,6 +51,7 @@ const Login = () => {
                         className="w-full border border-gray-300 rounded-lg px-4 py-3 text-right placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-800"
                         dir="rtl"
                     />
+                    {error && <p className="mt-2 text-red-600 text-sm">{error}</p>} {/* نمایش خطا */}
                     <button
                         type="submit"
                         className="mt-4 w-full bg-blue-800 text-white py-3 rounded-lg font-medium hover:bg-blue-900 transition"
@@ -56,5 +65,3 @@ const Login = () => {
 };
 
 export default Login;
-
-

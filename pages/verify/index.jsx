@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import Image from "next/image";
-import Logo from "../../public/LogoSarmayek.png";
+import Logo from "../../public/logo/LogoSarmayek.png";
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import { FiEdit, FiRefreshCw } from "react-icons/fi";
